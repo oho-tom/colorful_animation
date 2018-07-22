@@ -7,7 +7,11 @@ function setup() {
 
 function draw() {
     background('white');
-    canvas.width = window.innerWidth / 2;
-    canvas.height = window.innerHeight / 2;
-    background('gray');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    background('white');
+
+    fill('pink');
+    noStroke();
+    ellipse(canvas.width / 2, canvas.height / 2, 10, 10);
 }
