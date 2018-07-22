@@ -1,6 +1,5 @@
 var canvas;
 var angle = 0;
-var radius;
 
 function setup() {
     canvas = createCanvas(window.innerWidth, window.innerHeight);
@@ -14,20 +13,21 @@ function draw() {
     canvas.height = window.innerHeight;
     background('white');
 
-    radius = window.innerWidth / 3;
-    var r = canvas.width / 10;
+    var radius_animation = window.innerWidth / 3;
+    var radius_circle = canvas.width / 10;
 
     push();
+    // 描画の原点をキャンバスの中心に設定
     translate(canvas.width / 2, canvas.height / 2);
 
     for(var i = 0; i < 12; i++) {
-        fill('hsla(' + (360 / 12 * i) + ', 80%, 80%, 0.8)');
-        var x = sin(radians(angle + (360 / 12 * i))) * radius;
-        var y = cos(radians(angle + (360 / 12 * i))) * radius;
-        ellipse(x, y, r, r);
+        fill('hsla(' + (360 / 12 * i) + ', 80%, 80%, 0.4)');
+        var x = sin(radians(angle + (360 / 12 * i))) * radius_animation;
+        var y = cos(radians(angle + (360 / 12 * i))) * radius_animation;
+        ellipse(x, y, radius_circle, radius_circle);
     }
 
     pop();
 
-    angle += 0.2;
+    angle -= 0.2;
 }
