@@ -21,7 +21,7 @@ function draw() {
     translate(canvas.width / 2, canvas.height / 2);
 
     for(var i = 0; i < 12; i++) {
-        fill('pink');
+        fill('hsla(' + (360 / 12 * i) + ', 80%, 80%, 0.8)');
         var x = sin(radians(angle + (360 / 12 * i))) * radius;
         var y = cos(radians(angle + (360 / 12 * i))) * radius;
         ellipse(x, y, r, r);
@@ -29,5 +29,5 @@ function draw() {
 
     pop();
 
-    angle++;
+    angle += 0.2;
 }
